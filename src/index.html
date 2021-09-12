@@ -8,9 +8,16 @@
 </head>
 <body>
     <div class='container'>
-        <form class='form'>
-            <input type="text" name="author">
-            <input type="text" name="content">
+        <button class='add-new-task'>Добавить тикет</button>
+        <div class='task-container'>
+            
+        </div>
+        <form class='form hidden'>
+            <div class='form-name'>Добавить тикет</div>
+            <label for="name">Карткое описание</label>
+            <input type="text" class='ticket-name' name="name" placeholder="Краткое описание" required>
+            <label for="description">Полное описание</label>
+            <input type="text" class='ticket-description' name="description" placeholder="Полное описание">
             <button class='submit-button'>Отправить</button>
         </form>
       </div>

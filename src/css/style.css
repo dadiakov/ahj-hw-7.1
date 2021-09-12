@@ -2,12 +2,71 @@
   box-sizing: border-box;
 }
 
+body {
+  font-size: large;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 input {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .submit-button {
   margin-top: 5px;
   height: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.ticket-container {
+  position: relative;
+  margin-top: 5px;
+  border: 1px solid black;
+  min-height: 50px;
+}
+
+.ticket-time {
+  position: absolute;
+  top: 0;
+  right: 75px;
+}
+
+.form {
+  position: fixed;
+  padding: 10px;
+  width: 250px;
+  top: calc(50% - 150px);
+  left: calc(50% - 125px);
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.ticket-name,
+.ticket-description {
+  width: 100%;
+  height: 25px;
+}
+
+.form-name {
+  text-align: center;
+  font-size: 110%;
+  margin-bottom: 25px;
+}
+
+.edit-delete {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  right: 0;
+}
+
+span {
+  margin-left: 5px;
+  margin-right: 5px;
 }
