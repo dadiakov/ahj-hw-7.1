@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+input {
+  display: block;
+  margin-top: 5px;
+}
+
+.submit-button {
+  margin-top: 5px;
+  height: 25px;
+}
