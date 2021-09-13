@@ -17,7 +17,10 @@ app.use(koaBody({
 }));
 const port = process.env.PORT || 7070;
 
-const tickets = [{ id: 1, name: 'Задача1', description: 'Полное описание задачи1', status: false, time: '12.09.2021 22:44' },];
+const tickets = [{ id: 1, name: 'Задача1', description: 'Полное описание задачи1', status: false, time: '12.09.2021 22:44' },
+{ id: 2, name: 'Задача2', description: 'Полное описание задачи2', status: true, time: '12.09.2021 22:44' },
+{ id: 3, name: 'Задача3', description: 'Полное описание задачи3', status: false, time: '12.09.2021 22:44' }
+];
 
 app.use(async (ctx) => {
   const { method } = ctx.request.query;
@@ -31,6 +34,18 @@ app.use(async (ctx) => {
       let ticket = tickets.find((e) => e.id == ctx.request.query.id);
       if (ticket) {
         ctx.response.body = ticket;
+        return;
+      }
+      ctx.response.status = 404;
+
+    case 'changeStatus':
+      let ticket1 = tickets.find((e) => e.id == ctx.request.query.id);
+      if (ticket1) {
+        let id1 = ctx.request.query.id;
+        let status1 = tickets[tickets.findIndex(e => e.id == id1)].status;
+        status1 == true ? status1 = false : status1 = true;
+        tickets[tickets.findIndex(e => e.id == id1)].status = status1;
+        ctx.response.body = tickets;
         return;
       }
       ctx.response.status = 404;
@@ -52,7 +67,14 @@ app.use(async (ctx) => {
         ctx.response.status = 404;
       }
       return;
-      // TODO: обработка остальных методов
+
+    case 'editTicket':
+      const { id: idNew, name: nameNew, description: descriptionNew} = ctx.request.body;
+      tickets[tickets.findIndex(e => e.id == idNew)].name = nameNew;
+      tickets[tickets.findIndex(e => e.id == idNew)].description = descriptionNew;
+      ctx.response.body = tickets;
+      return;
+
     default:
       ctx.response.status = 404;
   }
