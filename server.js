@@ -16,7 +16,6 @@ app.use(cors());
 app.use(koaBody({
   urlencoded: true,
   multipart: true,
-  json: true,
 }));
 const port = process.env.PORT || 7070;
 
