@@ -74,7 +74,7 @@ class TicketsContainer {
 
   allTickets() {
     const xhr = new XMLHttpRequest();
-    const url = 'http://localhost:7070/?method=allTickets';
+    const url = '/?method=allTickets';
 
     xhr.open('GET', url, true);
     xhr.send();
