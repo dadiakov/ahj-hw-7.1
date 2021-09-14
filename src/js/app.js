@@ -74,7 +74,7 @@ class TicketsContainer {
 
   allTickets() {
     const xhr = new XMLHttpRequest();
-    const url = 'dadiakov-heroku.herokuapp.com/?method=allTickets';
+    const url = '/?method=allTickets';
 
     xhr.open('GET', url, true);
     xhr.send();
@@ -93,7 +93,7 @@ class TicketsContainer {
 
   ticketById(id) {
     const xhr = new XMLHttpRequest();
-    const url = `https://dadiakov-heroku.herokuapp.com/?method=ticketById&id=${id}`;
+    const url = `/?method=ticketById&id=${id}`;
 
     xhr.open('GET', url, true);
     xhr.send();
@@ -113,7 +113,7 @@ class TicketsContainer {
     const form = document.querySelector('.add-new-form');
     const data = new FormData(form);
     const xhr = new XMLHttpRequest();
-    const url = 'https://dadiakov-heroku.herokuapp.com/?method=createTicket';
+    const url = '/?method=createTicket';
 
     xhr.open('POST', url, true);
     xhr.send(data);
@@ -132,7 +132,7 @@ class TicketsContainer {
 
   deleteTicket(id) {
     const xhr = new XMLHttpRequest();
-    const url = `https://dadiakov-heroku.herokuapp.com/?method=deleteTicket&id=${id}`;
+    const url = `/?method=deleteTicket&id=${id}`;
 
     xhr.open('DELETE', url, true);
     xhr.send(null);
@@ -168,7 +168,7 @@ class TicketsContainer {
 
   changeStatus(id) {
     const xhr = new XMLHttpRequest();
-    const url = `https://dadiakov-heroku.herokuapp.com/?method=changeStatus&id=${id}`;
+    const url = `/?method=changeStatus&id=${id}`;
 
     xhr.open('GET', url, true);
     xhr.send();
@@ -190,7 +190,7 @@ class TicketsContainer {
     const data = new FormData(form);
     data.append('id', this.taskID);
     const xhr = new XMLHttpRequest();
-    const url = 'https://dadiakov-heroku.herokuapp.com/?method=editTicket';
+    const url = '/?method=editTicket';
 
     xhr.open('POST', url, true);
     xhr.send(data);
