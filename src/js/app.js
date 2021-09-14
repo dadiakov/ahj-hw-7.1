@@ -74,7 +74,7 @@ class TicketsContainer {
 
   allTickets() {
     const xhr = new XMLHttpRequest();
-    const url = '/?method=allTickets';
+    const url = 'https://dadiakov-heroku.herokuapp.com/?method=allTickets';
 
     xhr.open('GET', url, true);
     xhr.send();
