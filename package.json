@@ -7,8 +7,8 @@
     "prestart": "npm install",
     "start": "forever server.js",
     "watch": "forever -w server.js",
+    "devserv": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "startserv" : "webpack-dev-server --mode development",
     "lint": "eslint .",
     "test": "jest",
     "coverage": "jest --coverage",
@@ -39,7 +39,8 @@
     "url-loader": "^4.1.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
