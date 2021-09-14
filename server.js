@@ -10,13 +10,12 @@ const { v4: uuidv4 } = require('uuid');
 const public = path.join(__dirname,'/public');
 
 const app = new Koa();
-app.use(cors());
 
 app.use(cors({
   origin: '*',
   credentials: true,
-  'Access-Control-Allow-Origin': true,
-  allowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 
 app.use(koaBody({
